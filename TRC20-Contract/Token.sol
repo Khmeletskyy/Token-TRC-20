@@ -13,7 +13,7 @@ contract Token is TRC20, TRC20Detailed {
 
     function batchTransfer(address[] memory recipients, uint256[] memory amounts) public returns (bool) {
         require(recipients.length == amounts.length, "Invalid input: recipients and amounts array length mismatch");
-        require(recipients.length <= 100, "Too many recipients"); // Оптимальна кількість отримувачів у одній транзакції
+        require(recipients.length <= 100, "Too many recipients"); 
 
         uint256 totalAmount = 0;
         for (uint256 i = 0; i < recipients.length; i++) {
